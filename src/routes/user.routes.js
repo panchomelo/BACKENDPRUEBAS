@@ -1,14 +1,14 @@
 const express = require('express')
 const router = express.Router();
+const listarUsuarios = require("../controllers/getAllUser.js")
+const crearUsuario = require("../controllers/postCreateUser.js")
 
 
 //listar
 router.get("/", listarUsuarios);
 
 //crear
-router.post("/crear-usuario", (req, res) => {
-    res.send("ruta POST ok");
-    }); 
+router.post("/crear-usuario", crearUsuario);
 
 //loguear
 router.post("/login", (req, res) => {
