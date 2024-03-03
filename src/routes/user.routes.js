@@ -2,7 +2,9 @@ const express = require('express')
 const router = express.Router();
 const listarUsuarios = require("../controllers/getAllUser.js")
 const crearUsuario = require("../controllers/postCreateUser.js")
-
+const actualizarUsuario = require("../controllers/putActualizarUser.js")
+const login = require("../controllers/postLogin");
+const eliminarUsuario = require('../controllers/deleteUser.js');
 
 //listar
 router.get("/", listarUsuarios);
@@ -11,18 +13,12 @@ router.get("/", listarUsuarios);
 router.post("/crear-usuario", crearUsuario);
 
 //loguear
-router.post("/login", (req, res) => {
-    res.send("ruta POST ok");
-    }); 
+router.post("/login", login);
 
 //actualizar
-router.put("/actualizar-usuario", (req, res) => {
-    res.send("ruta PUT ok");
-    }); 
+router.put("/actualizar-usuario", actualizarUsuario);
 
 //eliminar
-router.delete("/eliminar-usuario", (req, res) => {
-    res.send("ruta DELETE ok");
-    }); 
+router.delete("/eliminar-usuario", eliminarUsuario);
 
-module.exports = router;
+module.exports = router; 
