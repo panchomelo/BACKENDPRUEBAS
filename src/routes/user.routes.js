@@ -16,7 +16,7 @@ router.post("/crear-usuario", crearUsuario);
 router.post("/login", login);
 
 //actualizar
-router.put("/actualizar-usuario", actualizarUsuario);
+router.put("/actualizar-usuario/:id", actualizarUsuario);
 
 //eliminar
 router.delete("/eliminar-usuario", eliminarUsuario);

@@ -11,6 +11,6 @@ const userSchema = new Schema({
 }) 
 
 //modelo
-const User = mongoose.model("user", userSchema);
+const User = mongoose.model("user", userSchema); //aquí el user hace referencia al mongoDB, va en singular pero en mongo va en plural
 
 module.exports = User;
